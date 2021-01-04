@@ -1,0 +1,125 @@
+
+$textcolor1 : #66FCF1;
+$textcolor3 : #C5C6C7;
+$textcolor2 : #45A29E;
+$bgcolor1 : #1F2833;
+$bgcolor2 : #0B0C10;
+$myfont : calibri;
+
+body{
+  background-color: $bgcolor2;
+}
+.maincontainer{
+  margin-left: 10%;
+  background-color: $bgcolor1;
+  padding: 10px;
+  width:500px;
+  border-radius: 5px;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-column-gap: 10px;
+}
+.item1{
+  grid-column-start:1;
+  grid-column-end: 5;
+  color:$textcolor1;
+}
+.item2{
+  grid-column-start:1;
+  grid-column-end: 3;
+  color:$textcolor3;
+}
+.item3{
+  grid-column-start:3;
+  grid-column-end: 5;
+  color:$textcolor3;
+}
+.item4{
+  grid-column-start:1;
+  grid-column-end: 5;
+  margin-top: 70px;
+  font-size: 20px;
+  color:$textcolor1;
+}
+.button1{
+  grid-column-start:1;
+  grid-column-end: 2;
+}
+.button1,.button2{
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 35px;
+  background-color: transparent;
+  font-weight:bold;
+  color:$textcolor1;
+  border:2px solid $textcolor1;
+}
+.button2{
+  border-radius: 5px;
+  grid-column-start:2;
+  grid-column-end: 3;
+}
+#input1{
+  border-radius: 5px;
+  height: 50px;
+  width: 90%;
+  font-size: 24px;
+  margin-top: 5px;
+  margin-right: 5px;
+  color:$textcolor2;
+  background-color: $bgcolor2;
+}
+select{
+  height: 40px;
+  width:95%;
+  padding-left: 10px;
+  font-size: 20px;
+  margin: 0px;
+  font-weight:200;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color:$textcolor2;
+  background-color: $bgcolor2;
+  font-family: $myfont;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+@media only screen and (max-width:600px) {
+  .maincontainer{
+    width:auto;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+  }
+  body{
+    margin: 0px;
+    padding:0px;
+  }
+  .item1{
+    font-size: 20px;
+  }
+  .grid-container{
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 5px;
+    justify-content: center;
+  }
+  .grid-container div{
+    font-size: 16px;
+  }
+  #input1{
+    height:40px;
+    font-size: 18px;
+    margin: 0px;
+    margin-right: 5px;
+  }
+  select{
+    font-size: 16px;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    width: auto;
+    min-width: 120px;
+  }
+}

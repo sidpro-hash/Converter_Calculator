@@ -1,0 +1,38 @@
+.bgcolor1 {
+  background-color: #0B0C10;
+  /*body,select,input1,output1*/
+}
+.bgcolor2{
+  background-color:#1F2833;
+  /*maincontainer*/
+}
+.textcolor1{
+  color:#66FCF1;
+  /*h1,lable1,lable2*/
+}
+.textcolor4{
+  color:#fcf066;
+}
+.textcolor2{
+  color:#45A29E;
+  /*select,input1,output1*/
+}
+.textcolor3{
+  color:#C5C6C7;
+  /*lable for select*/
+}
+.lbgcolor1{
+  background-color:#FCF6F5;
+}
+.lbgcolor2{
+  background-color:#2BAE66;
+}
+.ltextcolor1{
+  color: #FCF6F5;
+}
+.ltextcolor2{
+  color: #2BAE66;
+}
+.lbordercolor1{
+  border: 2px solid #FCF6F5;
+}

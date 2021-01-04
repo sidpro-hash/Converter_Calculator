@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <title id="title">Binary-Hex Converter & Calculator</title>
+  <meta charset="utf-8"/>
+  <meta name="author" content="SidPro"/>
+  <meta name="description" content="Decimal to binary conversion calculator"/>
+  <meta name="keywords" content="decimaltobinary,binarytodecimal,hexadecimaltodecimal,decimaltohexadecimal,binarytohexadecimal,hexadecimaltobinary"/>
+  <meta name="viewport" content="width=devive-width,initial-scale=1.0"/>
+  <link type="text/css" rel="stylesheet" href="converter.css">
+  <link rel="stylesheet" href="colorconvert.css">
+  <script src="sidpro.js" charset="utf-8"></script>
+</head>
+<body id="body1" class="bgcolor1">
+  <div class="flex-container">
+    <div class="grid-container maincontainer bgcolor2">
+  <!-- converter -->
+      <h1 id="h1" class="h2F item1 textcolor1">Decimal to Binary converter and CALCULATOR</h1>
+
+        <div class="item2 textcolor3" style="margin-top:10px">
+          <label for="select1">From</label><br/>
+          <select class="textcolor2 bgcolor1" id="select1" name="unit1" onchange="convert()">
+              <option value="Binary">Binary</option>
+              <option value="Decimal">Decimal</option>
+              <option value="Hexadecimal">Hexadecimal</option>
+          </select>
+        </div>
+
+        <div class="item3 textcolor3" style="margin-top:10px">
+          <lable for="select2">To</lable><br/>
+          <select class="textcolor2 bgcolor1" id="select2" name="unit2" onchange="convert()">
+              <option value="Binary">Binary</option>
+              <option value="Decimal">Decimal</option>
+              <option value="Hexadecimal">Hexadecimal</option>
+          </select>
+        </div>
+
+      <div class="item4 textcolor1">
+          <lable id="lable1" for="input1">Enter Decimal number:</lable><br/>
+          <input class="bgcolor1 textcolor2" id="input1" type="text" onkeypress="return Onpress(event)" name="binary1"><sub id="sub1">2</sub>
+      </div>
+
+      <button id="btn1" class="button1 textcolor1" type="button" name="convert" onclick="takevalue()">Convert</button>
+      <button id="btn2" class="button2 textcolor1" type="button" name="reset" onclick="Reset()">Reset</button>
+      <button id="btn3" class="button3 textcolor1" type="button" name="swape" onclick="Swape()">Swape</button>
+
+      <div class="item5 textcolor1">
+        <label id="lable2" for="output1">Binary number:</label><br>
+        <textarea class="bgcolor1 textcolor2" id="output1" name="outpu1" rows="20" cols="40" readonly></textarea><sub id="sub2">2</sub>
+      </div>
+   <!-- calculator -->
+      <h2 class="item1 textcolor4 h2F">Binary,Decimal & Hexadecimal CALCULATOR</h2>
+
+      <div class="item2 textcolor3">
+        <lable for="select3">Expression Type</lable><br/>
+        <select class="textcolor2 bgcolor1" id="select3" name="unit3" onchange="convertCal()">
+            <option value="Binary">Binary</option>
+            <option value="Decimal">Decimal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+        </select>
+      </div>
+
+      <div class="item6 textcolor1">
+        <label id="lable3" for="output2">Enter Binary Expression:<br/><br>E.g. 110+(11*01.01)/10</label><br>
+        <input class="bgcolor1 textcolor2" id="input2" type="text" onkeypress="return OnpressCal(event)" name="binary1"><sub id="sub3">2</sub>
+      </div>
+
+      <button id="btn4" class="button1 textcolor1" type="button" name="result" onclick="solve()">Result</button>
+      <button id="btn5" class="button2 textcolor1" type="button" name="reset" onclick="ResetCal()">Reset</button>
+
+      <div class="item7 textcolor1">
+        <label for="output2">Result:</label><br>
+        <textarea class="bgcolor1 textcolor2" id="output2" name="outpu2" rows="20" cols="40" readonly></textarea><sub id="sub4">2</sub>
+      </div>
+    </div>
+    <div class="text-container">
+      <div class="indiv">
+        <h2 class="h2F">Number Systems</h2>
+        <p>Computers use <span class="textcolor1">binary numbers</span> internally, because computers are made naturally to store and
+          process 0s and 1s. The binary number system has two digits, 0 and 1. A number or character
+          is stored as a sequence of 0s and 1s. <span class="textcolor2">Each 0 or 1 is called a <i>bit</i> (binary digit)</span>.</p>
+        <p>In our daily life we use <span class="textcolor1">decimal numbers</span>. When we write a number such as 20 in a program,
+          it is assumed to be a decimal number. Internally, computer software is used to convert
+          decimal numbers into binary numbers, and vice versa.</p>
+        <p>We write computer programs using decimal numbers. However, to deal with an operating
+            system, we need to reach down to the "machine level" by using binary numbers. Binary numbers
+            tend to be very long and cumbersome. Often <span class="textcolor1">hexadecimal numbers</span> are used to abbreviate
+            them, with each hexadecimal digit representing four binary digits. The hexadecimal number
+            system has 16 digits: 0-9 and A-F. <span class="textcolor2">The letters A, B, C, D, E, and F correspond to the decimal
+            numbers 10, 11, 12, 13, 14, and 15</span>.</p>
+        <p>The digits in the decimal number system are 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. A decimal
+              number is represented by a sequence of one or more of these digits. The value that each digit
+              represents depends on its position, which denotes an integral power of 10. For example, the
+              digits 7, 4, 2, and 3 in decimal number 7423 represent 7000, 400, 20, and 3, respectively, as
+              shown below:</p>
+         <p><span class="table">7</span><span class="table">4</span><span class="table">2</span><span class="tabler">3</span>
+            = 7 &times; 10<sup>3</sup> + 4 &times; 10<sup>2</sup> + 2 &times; 10<sup>1</sup> + 3 &times; 10<sup>0</sup><br/><br/>
+          10<sup>3</sup> 10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup> = 7000 + 400 + 20 + 3 = 7423</p>
+         <p>The decimal number system has ten digits, and the position values are integral powers of 10.
+           We say that 10 is the <i>base</i> or <i>radix</i> of the decimal number system. Similarly, since the binary
+           number system has two digits, its base is 2, and since the hex number system has 16 digits,
+           its base is 16.</p>
+
+          <p>If <span class="textcolor1">1101</span> is a <span class="textcolor1">binary number</span>, the digits 1, 1, 0, and 1 represent 1 &times; 2<sup>3</sup>, 1 &times; 2<sup>2</sup>, 0 &times; 2<sup>1</sup>, and 1 &times; 2<sup>0</sup>,respectively: </p>
+         <p><span class="table">1</span><span class="table">1</span><span class="table">0</span><span class="tabler">1</span>
+              = 1 &times; 2<sup>3</sup> + 1 &times; 2<sup>2</sup> + 0 &times; 2<sup>1</sup> + 1 &times; 2<sup>0</sup><br/><br/>
+            2<sup>3</sup>&nbsp;&nbsp; 2<sup>2</sup>&nbsp;&nbsp; 2<sup>1</sup>&nbsp;&nbsp; 2<sup>0</sup>&nbsp;&nbsp; = 8 + 4 + 0 + 1 = 13</p>
+
+         <p>If <span class="textcolor1">7423</span> is a <span class="textcolor1">hex number</span>, the digits 7, 4, 2, and 3 represent 7 &times; 16<sup>3</sup>, 4 &times; 16<sup>2</sup>, 2 &times; 16<sup>1</sup>, and 3 &times; 16<sup>0</sup>,respectively: </p>
+         <p><span class="table">7</span><span class="table">4</span><span class="table">2</span><span class="tabler">3</span>
+               = 7 &times; 16<sup>3</sup> + 4 &times; 16<sup>2</sup> + 2 &times; 16<sup>1</sup> + 3 &times; 16<sup>0</sup><br/><br/>
+             16<sup>3</sup> 16<sup>2</sup> 16<sup>1</sup> 16<sup>0</sup> = 7000 + 400 + 20 + 3 = 7423</p>
+      </div>
+    </div>
+  </div>
+  <div class="text-bottom">
+    <h2 class="h2F">Conversions Between Binary and Decimal Numbers</h2>
+    <p>Given a binary number <span class="textcolor1">b<sub>n</sub>b<sub>n - 1</sub>b<sub>n - 2</sub>...b<sub>2</sub>b<sub>1</sub>b<sub>0</sub></span>, the equivalent decimal value is
+    <span class="textcolor1">b<sub>n</sub> &times; 2<sup>n</sup> + b<sub>n-1</sub> &times; 2<sup>n-1</sup> + b<sub>n-2</sub> &times; 2<sup>n-2</sup> + ... +
+    b<sub>2</sub> &times; 2<sup>2</sup> + b<sub>1</sub> &times; 2<sup>1</sup> + b<sub>0</sub> &times; 2<sup>0</sup></span>.</p>
+    <p>Here are some examples of converting binary numbers to decimals:</p>
+    <ol>
+      <li><i>Binary:</i> 10<br><i>Conversion Formula:</i> 1 &times; 2<sup>1</sup> + 0 &times; 2<sup>0</sup>
+      <br><i>Decimal:</i> 2</li>
+
+      <li><i>Binary:</i> 1000<br><i>Conversion Formula:</i> 1 &times; 2<sup>3</sup> + 0 &times; 2<sup>2</sup> + 0 &times; 2<sup>1</sup> + 0 &times; 2<sup>0</sup>
+      <br><i>Decimal:</i> 8</li>
+
+      <li><i>Binary:</i> 10101011<br><i>Conversion Formula:</i> 1 &times; 2<sup>7</sup> + 0 &times; 2<sup>6</sup> + 1 &times; 2<sup>5</sup> + 0 &times; 2<sup>4</sup> +
+        1 &times; 2<sup>3</sup> + 0 &times; 2<sup>2</sup> + 1 &times; 2<sup>1</sup> + 1 &times; 2<sup>0</sup>
+      <br><i>Decimal:</i> 171</li>
+    </ol>
+    <p>To convert a decimal number d to a binary number is to find the bits b<sub>n</sub>b<sub>n - 1</sub>b<sub>n - 2</sub>...b<sub>2</sub>b<sub>1</sub>b<sub>0</sub> such that</p>
+    <p>d = b<sub>n</sub> &times; 2<sup>n</sup> + b<sub>n-1</sub> &times; 2<sup>n-1</sup> + b<sub>n-2</sub> &times; 2<sup>n-2</sup> + ... +
+    b<sub>2</sub> &times; 2<sup>2</sup> + b<sub>1</sub> &times; 2<sup>1</sup> + b<sub>0</sub> &times; 2<sup>0</sup></p>
+    <p>These bits can be found by successively dividing d by 2 until the quotient is 0. The remainders
+      are b<sub>0</sub>b<sub>1</sub>b<sub>2</sub>...b<sub>n - 2</sub>b<sub>n - 1</sub>b<sub>n</sub>.</p>
+    <p>For example, the decimal number 123 is 1111011 in binary. The conversion is done as follows:</p>
+    <table style="margin-left:10%">
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">123</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">61</td>
+        <td class="textcolor2">1</td>
+      </tr>
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">30</td>
+        <td class="textcolor2">1</td>
+      </tr>
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">15</td>
+        <td class="textcolor2">0</td>
+      </tr>
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">7</td>
+        <td class="textcolor2">1</td>
+      </tr>
+      <tr>
+        <td class="td-border-bottom">2</td>
+        <td class="td-border-bottom td-border-left">3</td>
+        <td class="textcolor2">1</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td-border-left textcolor2">1</td>
+        <td class="textcolor2">1</td>
+      </tr>
+    </table>
+    <p>Than count Binary number bottom to Up. 1111011</p>
+
+    <h2 class="h2F">Conversions Between Hexadecimal and Decimal Numbers</h2>
+    <p>Given a hexadecimal number <span class="textcolor1">h<sub>n</sub>h<sub>n - 1</sub>h<sub>n - 2</sub>...h<sub>2</sub>h<sub>1</sub>h<sub>0</sub></span>, the equivalent decimal value is
+    <span class="textcolor1">h<sub>n</sub> &times; 16<sup>n</sup> + h<sub>n-1</sub> &times; 16<sup>n-1</sup> + h<sub>n-2</sub> &times; 16<sup>n-2</sup> + ... +
+    h<sub>2</sub> &times; 16<sup>2</sup> + h<sub>1</sub> &times; 16<sup>1</sup> + h<sub>0</sub> &times; 16<sup>0</sup></span>.</p>
+    <p>Here are some examples of converting hexadecimal numbers to decimals:</p>
+    <ol>
+      <li><i>Hexadecimal:</i> 7F<br><i>Conversion Formula:</i> 7 &times; 16<sup>1</sup> + 15 &times; 16<sup>0</sup>
+      <br><i>Decimal:</i> 127</li>
+
+      <li><i>Hexadecimal:</i> FFFF<br><i>Conversion Formula:</i> 15 &times; 16<sup>3</sup> + 15 &times; 16<sup>2</sup> + 15 &times; 16<sup>1</sup> + 15 &times; 16<sup>0</sup>
+      <br><i>Decimal:</i> 65535</li>
+
+      <li><i>Hexadecimal:</i> 431<br><i>Conversion Formula:</i> 4 &times; 16<sup>2</sup> + 3 &times; 16<sup>1</sup> + 1 &times; 16<sup>0</sup>
+      <br><i>Decimal:</i> 1073</li>
+    </ol>
+    <p>To convert a decimal number d to a hexadecimal number is to find the bits h<sub>n</sub>h<sub>n - 1</sub>h<sub>n - 2</sub>...h<sub>2</sub>h<sub>1</sub>h<sub>0</sub> such that</p>
+    <p>d = h<sub>n</sub> &times; 16<sup>n</sup> + h<sub>n-1</sub> &times; 16<sup>n-1</sup> + h<sub>n-2</sub> &times; 16<sup>n-2</sup> + ... +
+    h<sub>2</sub> &times; 16<sup>2</sup> + h<sub>1</sub> &times; 16<sup>1</sup> + h<sub>0</sub> &times; 16<sup>0</sup></p>
+    <p>These bits can be found by successively dividing d by 16 until the quotient is 0. The remainders
+      are h<sub>0</sub>h<sub>1</sub>h<sub>2</sub>...h<sub>n - 2</sub>h<sub>n - 1</sub>h<sub>n</sub>.</p>
+    <p>For example, the decimal number 123 is 7B in hexadecimal. The conversion is done as
+      follows:</p>
+      <table style="margin-left:10%">
+        <tr>
+          <td class="td-border-bottom">16</td>
+          <td class="td-border-bottom td-border-left">123</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="td-border-bottom">16</td>
+          <td class="td-border-bottom td-border-left">7</td>
+          <td class="textcolor2">11</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td-border-left">0</td>
+          <td class="textcolor2">7</td>
+        </tr>
+      </table>
+      <p>Than count Hexadecimal number bottom to Up. 7B</p>
+
+    <h2 class="h2F">Conversions Between Binary and Hexadecimal Numbers</h2>
+    <p>To convert a hexadecimal to a binary number, simply convert each digit in the hexadecimal
+      number into a four-digit binary number, using Table</p>
+    <table style="margin-left:10%">
+      <tr>
+        <th class="textcolor1">Hexadecimal</th>
+        <th class="textcolor1">Binary</th>
+        <th class="textcolor1">Decimal</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0000</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0001</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>0010</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>0011</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>0100</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>0101</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>0110</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>0111</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>1000</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>1001</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>1010</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>1011</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>1100</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>1101</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>1110</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>1111</td>
+        <td>15</td>
+      </tr>
+    </table>
+    <p>For example, the hexadecimal number 7B is 1111011, where 7 is 111 in binary, and B is
+      1011 in binary.</p>
+    <p>To convert a binary number to a hexadecimal, convert every four binary digits from right
+      to left in the binary number into a hexadecimal number.</p>
+    <p>For example, the binary number 1110001101 is 38D, since 1101 is D, 1000 is 8, and 11 is 3.</p>
+  </div>
+</body>
+</html>
