@@ -1,0 +1,239 @@
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maincontainer {
+  margin-left: 7%;
+  padding: 10px;
+  width: 500px;
+  border-radius: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-column-gap: 10px;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 70px;
+  letter-spacing: 1px;
+}
+
+select {
+  height: 40px;
+  width: 95%;
+  padding-left: 10px;
+  font-size: 20px;
+  margin: 0px;
+  font-weight: 200;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-family: calibri;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.item2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item3 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+#input1,#input2 {
+  border-radius: 5px;
+  height: 50px;
+  width: 90%;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.item4{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  margin-top: 70px;
+  font-size: 20px;
+}
+.item6{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  margin-top: 70px;
+  font-size: 20px;
+}
+
+.button1, .button2, .button3 {
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 35px;
+  background-color: transparent;
+  font-weight: bold;
+  border: 2px solid #45A29E;
+  font-size: 16px;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button1:hover, .button2:hover, .button3:hover{
+  cursor:pointer;
+}
+.button1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.button2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.button3{
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+#output1,#output2{
+  resize: vertical;
+  border-radius: 5px;
+  height: 120px;
+  width: 90%;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.h2F{
+  font-size: 28px;
+}
+
+.item5,.item7{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  margin-top: 20px;
+  font-size: 20px;
+}
+/* text container */
+.text-container{
+  color: white;
+  width:40%;
+  margin:5px;
+}
+.indiv{
+  padding: 5px;
+  color: white;
+}
+.indiv p{
+  text-align: justify;
+  font-size: 18px;
+  color:#C5C6C7;
+  font-family: calibri;
+}
+.table{
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  padding: 2px 9px 2px 9px;
+}
+.tabler{
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 2px 9px 2px 9px;
+}
+/* text bottom */
+.text-bottom{
+  margin-left: 7%;
+  color: white;
+  width:85%;
+}
+.text-bottom p,.text-bottom li{
+  text-align: justify;
+  font-size: 18px;
+  color:#C5C6C7;
+  font-family: calibri;
+}
+.td-border-bottom{
+  border-bottom: 1px solid white;
+}
+.td-border-left{
+  border-left: 1px solid white;
+}
+td,th{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media only screen and (max-width: 1020px) {
+  .text-container{
+      width:30%;
+  }
+  .text-bottom{
+    width:80%;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .text-container{
+      width:520px;
+      margin: 7%;
+  }
+  .text-bottom{
+    width:520px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .maincontainer,.text-container,.text-bottom{
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+  }
+  .text-container{
+    width:100%;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .item1 {
+    font-size: 20px;
+    height: 50px;
+    letter-spacing: normal;
+  }
+  .button1,.button2,.button3{
+    letter-spacing: normal;
+    font-size:12px;
+    width: auto;
+  }
+  .grid-container {
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 3px;
+    justify-content: center;
+  }
+
+  .grid-container div {
+    font-size: 16px;
+  }
+  #input1,#output1,#input2,#output2{
+    height: 40px;
+    font-size: 16px;
+    margin: 0px;
+    margin-right: 5px;
+  }
+  #output1,#output2{
+    height: 80px;
+  }
+  select {
+    font-size: 16px;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/*# sourceMappingURL=converter.css.map */
